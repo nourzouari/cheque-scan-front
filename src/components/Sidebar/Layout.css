@@ -1,0 +1,90 @@
+/* src/components/layout/Layout.css */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #f3f4f6;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
+  height: 100vh; /* CHANGÉ: de min-height à height */
+  width: calc(100% - 260px);
+  background: #f3f4f6;
+  overflow-y: auto; /* AJOUTÉ: permet le scroll */
+}
+
+.main-content.expanded {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+.content-wrapper {
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100%; /* CHANGÉ: de 100vh à 100% */
+}
+
+/* Pour que le scroll soit fluide */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+  }
+  
+  .content-wrapper {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    height: auto; /* Sur mobile, hauteur automatique */
+    min-height: 100vh;
+    overflow-y: visible;
+  }
+  
+  .main-content.expanded {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .content-wrapper {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrapper {
+    padding: 12px;
+  }
+}

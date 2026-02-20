@@ -1,0 +1,95 @@
+/* frontend/src/components/cheques/FormField.css */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.field-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.required-star {
+  color: #ef4444;
+  margin-left: 0.25rem;
+}
+
+.confidence-badge {
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.confidence-badge.confidence-high {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.confidence-badge.confidence-medium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.confidence-badge.confidence-low {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.field-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.field-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.field-input.confidence-high {
+  border-color: #22c55e;
+}
+
+.field-input.confidence-high:focus {
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.field-input.confidence-medium {
+  border-color: #eab308;
+}
+
+.field-input.confidence-medium:focus {
+  box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.2);
+}
+
+.field-input.confidence-low {
+  border-color: #ef4444;
+}
+
+.field-input.confidence-low:focus {
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+.field-input:not(.confidence-high):not(.confidence-medium):not(.confidence-low):focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+textarea.field-input {
+  resize: vertical;
+  min-height: 80px;
+}
